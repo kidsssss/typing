@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Typing Test</title>
+  </head>
+  <body>
+    <h2>Typing Test</h2>
+    <div class="container">
+      <div class="bar top-bar">
+        <div class="left-side">
+          <!-- Add later -->
+          <!-- <div class="modes">
+            <span id="word-count-mode" class="chosen">words</span>
+            <span id="time-count-mpde">time</span>
+          </div> -->
+          <div class="choices">
+            <div id="word-count">
+              <span id="word-count-10">10</span>/<span
+                id="word-count-25"
+                class="chosen"
+                >25</span
+              >/<span id="word-count-50">50</span>/<span id="word-count-100"
+                >100</span
+              >/<span id="word-count-200">200</span>
+            </div>
+            <!-- Add later -->
+            <!-- <div id="time-count" class="no-show">
+              <span id="time-count-15">15</span>/
+              <span id="time-count-30">30</span>/
+              <span id="time-count-60">60</span>/
+              <span id="time-count-120">120</span>
+            </div> -->
+          </div>
+        </div>
+        <div class="right-side" id="right-side">wpm: ? / acc: ? / time : ?</div>
+      </div>
+      <div class="typing-area">
+        <div id="text-display"></div>
+        <div class="bar">
+          <input type="text" id="text-input" />
+          <button id="redo-btn">redo</button>
+        </div>
+      </div>
+    </div>
+    <script src="words.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
