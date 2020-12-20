@@ -17,13 +17,14 @@ function getWords(amount) {
   for (let i = 0; i < amount; i++) {
     let randomWord = words[Math.floor(Math.random() * words.length)];
     if (i > 0) {
+      //no word can get chosen twice in a row
       while (randomWord === wordsToDisplay[i - 1]) {
         randomWord = words[Math.floor(Math.random() * words.length)];
       }
     }
     wordsToDisplay.push(randomWord);
   }
-  console.log(wordsToDisplay);
+  //console.log(wordsToDisplay);
   displayWords();
 }
 
@@ -41,6 +42,7 @@ function displayWords() {
 function clearAll() {
   textDisplay.innerText = "";
   textInput.value = "";
+  textInput.placeholder = "";
   currentWord = 0;
   correctChars = 0;
   start = 0;
@@ -63,14 +65,22 @@ function showResult() {
   rightSide.innerHTML = `wpm: <span class="chosen">${wpm}</span> / acc: <span class="chosen">${acc}</span> / time: <span class="chosen">${Math.floor(
     totalTime * 60
   )}</span>`;
-  textInput.value = "Press Tab + Enter to redo...";
+  textInput.value = "";
+  textInput.placeholder = "Press Tab + Enter to redo...";
 }
 
 //Event Listeners
 //Key pressed on input
 textInput.addEventListener("keydown", (e) => {
   //Add wrong-input class to textInput when pressed the wrong key
-  if ((e.key >= "a" && e.key <= "z") || e.key === "'") {
+  if (
+    (e.key >= "a" && e.key <= "z") ||
+    (e.key >= "0" && e.key <= "9") ||
+    e.key === "'" ||
+    e.key === ";" ||
+    e.key === "," ||
+    e.key === "."
+  ) {
     let inputWordSlice = textInput.value + e.key;
     let currentWordSlice = wordsToDisplay[currentWord].slice(
       0,
@@ -155,4 +165,5 @@ wordCount.addEventListener("click", (e) => {
     getWords(numOfWords);
   }
 });
+
 getWords(numOfWords);
