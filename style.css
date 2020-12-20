@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 * {
   box-sizing: border-box;
   color: #f890e7;
   font-size: 16px;
-  font-family: "Fira Code", sans-serif;
+  font-family: "Fira Code", "Roboto Mono", sans-serif;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -104,7 +106,7 @@ h2 {
 }
 
 .wrong-input {
-  background-color: #9c0000 !important;
+  background-color: #b40101 !important;
 }
 
 .wrong {
